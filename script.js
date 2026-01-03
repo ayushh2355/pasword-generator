@@ -23,19 +23,47 @@ useEffect(()=>{
   password();
 },[length,numchange,charchange])
 
-    return (
-    <>
-        <h1>Password is {pass}</h1>
-        <div>
-            <input type="range" min={5} max={50} value={length} onChange={(e)=>setlength(e.target.value)}></input>
-            <br/>
-            <label>Length is {length}</label>
-            <input type="checkbox" defaultChecked={numchange} onChange={()=>setchange(!numchange)}></input>
-                 <label>Number</label>
-                   <input type="checkbox" defaultChecked={charchange} onChange={()=>setcarchange(!charchange)}></input>
-                 <label>special_char</label>
-        </div>
-    </>
-    )
+return (
+  <>
+    <div id="box">
+      <h1>Password Generator</h1>
+
+      <div className="password">
+        {pass}
+      </div>
+
+      <div className="control">
+        <label>Length: {length}</label>
+        <input
+          type="range"
+          min={5}
+          max={50}
+          value={length}
+          onChange={(e) => setlength(e.target.value)}
+        />
+      </div>
+
+      <div className="checkboxes">
+        <label>
+          <input
+            type="checkbox"
+            checked={numchange}
+            onChange={() => setchange(!numchange)}
+          />
+          Include Numbers
+        </label>
+
+        <label>
+          <input
+            type="checkbox"
+            checked={charchange}
+            onChange={() => setcarchange(!charchange)}
+          />
+          Include Special Characters
+        </label>
+      </div>
+    </div>
+  </>
+);
 }
 ReactDOM.createRoot(document.getElementById('root')).render(<Main/>);
