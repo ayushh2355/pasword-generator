@@ -1,0 +1,19 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+     text-align: center;
+     color: greenyellow;
+}
+.see{
+    display: flex;
+    gap: 10px;
+}
+.see button{
+    height: 50px;
+    width: 90px;
+    font-size:medium;
+    text-align: center;
+    background-color:greenyellow;
+}
